@@ -1,0 +1,236 @@
+<!DOCTUPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <title></title>
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <div class="tests">
+            <div class="tests__header">
+                <a href="#tests__shadow"><button class="header__btn">Open pop-up button</button></a>
+            </div>
+
+            <div id="tests__shadow">
+                <div id="shadow__pop_up_window">
+                  Всплывающее pop-up!<br>
+                  <a href="#" class="pop_up_window__close">Закрыть pop-up</a>
+                </div>
+            </div>
+               
+            <div class="tests__block_one">
+                <div class="block_one__block block_1"><p></p></div>
+                <div class="block_one__block block_2"><p></p></div>
+                <div class="block_one__block block_3"><p></p></div>
+                <div class="block_one__block block_4"><p></p></div>
+                <div class="block_one__block block_5"><p></p></div>
+            </div>
+
+            <div class="tests__block_two">
+                <div class="block_two__block">
+                    <div class="block__4x3">
+
+                    </div>
+                </div>
+                <div class="block_two__block">
+                    <div class="block__4x3">
+
+                    </div>
+                </div>
+                <div class="block_two__block">
+                    <div class="block__4x3">
+
+                    </div>
+                </div>
+                <div class="block_two__block">
+                    <div class="block__4x3">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="tests__footer"></div>
+        </div>
+    </body>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        p {
+            font-weight: 400;
+            font-size: 53px;
+            line-height: 62px;
+            color: #FFFFFF;
+            text-align: center;
+        }
+
+        .tests {
+            max-width: 1200px; 
+            background-color: #C0DBD9;
+            margin: auto;
+        }
+
+        .tests__header {
+            height: 100px;
+            background-color: #7FAFF7;
+            margin: 0 15px 0 15px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            align-items: center;
+            align-content: center;
+        }
+
+        .header__btn {
+            width: 209px;
+            height: 39px;
+            margin-left: 30px;
+            border: none;
+            background-color: #A5C7F9;
+            border-radius: 5px;
+            /*text*/
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 23px;
+            color: #FFFFFF;
+        }
+
+        .tests__block_one {
+            height: 411px;
+            background-color: #B3F95A;
+            margin: 15px 15px 0 15px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            align-content: space-between;
+
+            counter-reset: block_counter 0;
+        }
+
+        .tests__block_one p {
+            counter-increment: block_counter;
+        }
+
+        .tests__block_one p::after {
+            content: counter(block_counter);
+        }
+
+        .block_one__block {
+            background-color: #8AD191;
+            height: 198px;
+        }
+
+        .block_1 {
+            width: 390px;
+            flex-basis: 33.3%;
+        }
+
+        .block_2 {
+            width: 590px;
+            flex-basis: 50.4%;
+        }
+
+        .block_3 {
+            width: 160px;
+            flex-basis: 13.6%;
+        }
+
+        .block_4 {
+            width: 995px;
+            flex-basis:85%;
+        }
+
+        .block_5 {
+            width: 160px;
+            flex-basis: 13.6%;
+        }
+
+        .tests__block_two {
+            height: 259px;
+            background-color: #88B5BF;
+            margin: 15px 15px 0 15px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-evenly;
+            align-items: center;
+            align-content: center;
+        }
+
+        .block_two__block {
+            flex-basis: 21.8%;
+        }
+
+        .block__4x3 {
+            width: 100%;
+            background-color: #0D89B0;
+            position: relative;
+            padding-top: 75%;
+        }
+
+        .tests__footer {
+            height: 100px;
+            background-color: #7FAFF7;
+            margin: 100px 15px 0 15px; 
+        }
+
+        #tests__shadow {
+            background: rgba(102, 102, 102, 0.5);
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+
+        #shadow__pop_up_window {
+            width: 300px;
+            height: 70px;
+            text-align: center;
+            padding: 15px;
+            border: 3px solid #7FAFF7;
+            border-radius: 10px;
+            color: #7FAFF7;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 23px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            background: #fff;
+        }
+
+        #tests__shadow:target {
+            display: block;
+        }
+
+        .pop_up_window__close {
+            display: inline-block;
+            border-bottom: 1px solid #7FAFF7;
+            color: #7FAFF7;
+            padding: 0 12px;
+            margin: 10px;
+            text-decoration: none;
+            background: white;
+            font-size: 10pt;
+            text-decoration: none;
+            cursor:pointer;
+        }
+
+        .pop_up_window__close:hover {
+            background: #7FAFF7;
+            color: white;
+        }
+    </style>
+</html>
